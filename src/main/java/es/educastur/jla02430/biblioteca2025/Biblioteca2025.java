@@ -3,6 +3,7 @@ package es.educastur.jla02430.biblioteca2025;
 import java.util.ArrayList;
 
 /**
+ * Este es el proyecto de la Biblioteca
  * @author Pablo González Valle
  */
 
