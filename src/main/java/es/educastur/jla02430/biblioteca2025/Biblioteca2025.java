@@ -1,6 +1,8 @@
 package es.educastur.jla02430.biblioteca2025;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Este es el proyecto de la Biblioteca
@@ -32,8 +34,50 @@ public class Biblioteca2025 {
         
     }
     
-    //<editor-fold defaultstate="collapsed" desc="METODOS AUXILIARES"
+    private void nuevoPrestamo() {
+        System.out.println("Identificación del usuario: ");
+        int posUsuario = buscaDni(solicitaDni());
+        if (posUsuario ==-1) {
+            System.out.println("Usuario no encontrado");
+        } else {
+            System.out.println("Identificación del libro");
+            int posLibro = buscaIsbn(solicitaIsbn());
+            if (posLibro==-1) {
+                System.out.println("No se encuentra el ISBN en el sistema");
+            } else if (libros.get(posLibro).getEjemplares()>0){
+                LocalDate hoy = LocalDate.now();
+                prestamos.add(new Prestamo(libros.get(posLibro),usuarios.get(posUsuario),hoy,hoy.plusDays(15)));
+             } else {
+                System.out.println("No quedan unidades disponibles");
+            }
+        }
+    }
     
+    /**
+     * Método para solicitar un DNI
+     * @return dni (String)
+     */
+    
+    public String solicitaDni(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Teclea el DNI del usuario: ");
+        String dni= sc.nextLine();
+        return dni;
+    }
+    
+    /**
+     * Método para solicitar un ISBN
+     * @return isbn (String)
+     */
+    
+    public String solicitaIsbn(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Teclea el ISBN del usuario: ");
+        String isbn= sc.nextLine();
+        return isbn;
+    }
+    
+    //<editor-fold defaultstate="collapsed" desc="MÉTODOS AUXILIARES">
     /**
      * Método para buscar un Dni en la colección usuarios
      * @param dni dni (String) del usuario a buscar en la colección
@@ -67,5 +111,6 @@ public class Biblioteca2025 {
         }
         return pos;
     }
-
+//</editor-fold>
+    
 }
