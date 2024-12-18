@@ -29,5 +29,43 @@ public class Biblioteca2025 {
     }
 
     private void menu() {
+        
     }
+    
+    //<editor-fold defaultstate="collapsed" desc="METODOS AUXILIARES"
+    
+    /**
+     * Método para buscar un Dni en la colección usuarios
+     * @param dni dni (String) del usuario a buscar en la colección
+     * @return posición (int) del usuario en el ArrayList, -1 si no se encuentra
+     */
+    
+    public int buscaDni(String dni) {
+        int pos = -1;
+        for (int i = 0; i < usuarios.size(); i++) {
+            if(usuarios.get(i).getDni().equals(dni)) {
+                pos = i;
+                break;
+            }
+        }
+        return pos;
+    }
+    
+    /**
+     * Método para buscar un Isbn en la colección libros 
+     * @param isbn isbn (String) del libro a buscar en la colección
+     * @return posición (int) del libro en el ArrayList, -1 si no encuentra
+     */
+    
+    public int buscaIsbn(String isbn) {
+        int pos = -1;
+        for (int i = 0; i < libros.size(); i++) {
+            if(libros.get(i).getIsbn().equals(isbn)) {
+                pos = i;
+                break;
+            }
+        }
+        return pos;
+    }
+
 }
