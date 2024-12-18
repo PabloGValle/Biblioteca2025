@@ -47,6 +47,7 @@ public class Biblioteca2025 {
             } else if (libros.get(posLibro).getEjemplares()>0){
                 LocalDate hoy = LocalDate.now();
                 prestamos.add(new Prestamo(libros.get(posLibro),usuarios.get(posUsuario),hoy,hoy.plusDays(15)));
+                libros.get(posLibro).setEjemplares(libros.get(posLibro).getEjemplares()-1);
              } else {
                 System.out.println("No quedan unidades disponibles");
             }
