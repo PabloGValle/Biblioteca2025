@@ -231,6 +231,7 @@ public class Biblioteca2025 {
             System.out.println("No hay ningún préstamo con esos datos");
         }else{
             prestamos.get(pos).setFechaDev(prestamos.get(pos).getFechaDev().plusDays(15));
+            prestamos.get(pos).setFechaDev(LocalDate.now());
         }
     }
 
