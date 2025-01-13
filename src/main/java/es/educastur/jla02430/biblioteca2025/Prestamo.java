@@ -1,13 +1,12 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package es.educastur.jla02430.biblioteca2025;
-
 import java.time.LocalDate;
 
-/**
- * @author Pablo González Valle
- */
 
 public class Prestamo {
-    
     private Libro libroPrest;
     private Usuario usuarioPrest;
     private LocalDate fechaPrest;
@@ -23,39 +22,31 @@ public class Prestamo {
     public Libro getLibroPrest() {
         return libroPrest;
     }
-
-    public void setLibroPrest(Libro libroPrest) {
-        this.libroPrest = libroPrest;
-    }
-
     public Usuario getUsuarioPrest() {
         return usuarioPrest;
     }
-
-    public void setUsuarioPrest(Usuario usuarioPrest) {
-        this.usuarioPrest = usuarioPrest;
-    }
-
     public LocalDate getFechaPrest() {
         return fechaPrest;
     }
-
-    public void setFechaPrest(LocalDate fechaPrest) {
-        this.fechaPrest = fechaPrest;
-    }
-
     public LocalDate getFechaDev() {
         return fechaDev;
     }
 
+    public void setLibroPrest(Libro libroPrest) {
+        this.libroPrest = libroPrest;
+    }
+    public void setUsuarioPrest(Usuario usuarioPrest) {
+        this.usuarioPrest = usuarioPrest;
+    }
+    public void setFechaPrest(LocalDate fechaPrest) {
+        this.fechaPrest = fechaPrest;
+    }
     public void setFechaDev(LocalDate fechaDev) {
         this.fechaDev = fechaDev;
     }
 
     @Override
     public String toString() {
-        return libroPrest + " - " + usuarioPrest + " - " + fechaPrest + " - " + fechaDev;
+        return libroPrest + "-" + usuarioPrest + "-" + fechaPrest + "-" + fechaDev;
     }
-    
-    
 }
